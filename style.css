@@ -1,0 +1,124 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e4e4e4;
+    text-align: center;
+  }
+  .game-title {
+    font-size: 2.5em;
+    margin: 40px 0 20px 0;
+    color: #333;
+  }
+  .board-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    position: relative;
+  }
+  .game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 5px;
+    background: #333;
+    width: 315px;
+    height: 315px;
+    padding: 5px;
+    border-radius: 10px;
+    position: relative;
+  }
+  .cell {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s;
+    user-select: none;
+    z-index: 1;
+  }
+  .cell:hover {
+    background: #f1f1f1;
+  }
+  .cell.winner {
+    background: #ffe082 !important;
+  }
+  .game-status {
+    font-size: 1.5em;
+    margin: 20px 0;
+    min-height: 2em;
+    color: #8d1b26;
+  }
+  .game-restart {
+    padding: 10px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 2px solid #a93131;
+    background: #fff;
+    color: #222;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .game-restart:hover {
+    background: #510d0d;
+    color: #fff;
+  }
+  
+  /* Mode selection overlay */
+  .mode-select {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  .mode-select h2 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .mode-select button {
+    margin: 10px;
+    font-size: 1.2em;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    background: #1ed86c;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .mode-select button:hover {
+    background: #13a85a;
+  }
+  
+  
+  /* Horizontal lines */
+  .line.row-0 { top: calc(16.66% - 1.5px); left: 0; width: 100%; height: 3px; }
+  .line.row-1 { top: calc(49.99% - 1.5px); left: 0; width: 100%; height: 3px; }
+  .line.row-2 { top: calc(83.33% - 1.5px); left: 0; width: 100%; height: 3px; }
+  
+  /* Vertical lines */
+  .line.col-0 { left: calc(16.66% - 1.5px); top: 0; width: 3px; height: 100%; }
+  .line.col-1 { left: calc(49.99% - 1.5px); top: 0; width: 3px; height: 100%; }
+  .line.col-2 { left: calc(83.33% - 1.5px); top: 0; width: 3px; height: 100%; }
+  
+  /* Diagonal lines */
+  .line.diag-main {
+    left: 0; top: 0; width: 100%; height: 3px;
+    transform: rotate(45deg) scaleX(1.1);
+    transform-origin: left top;
+  }
+  .line.diag-anti {
+    right: 0; top: 0; width: 100%; height: 3px;
+    transform: rotate(-45deg) scaleX(1.1);
+    transform-origin: right top;
+  }
+  
